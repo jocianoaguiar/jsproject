@@ -2,42 +2,81 @@
     padding: 0;
     margin: 0 auto;
     box-sizing: border-box;
+    font-family:'Open-Sans',sans-serif;
+    text-decoration: none;
+    
 }
 body{
     background-image: url(../imagens/bg.webp);
     background-size: cover;
     background-repeat: no-repeat;
 }
-.menumobile{
-    width: 100%;
-    display: none;
-}
-.menupc{
-    width: 100%;
+header{
+    height: 90px;
+    background-color: antiquewhite;
     background-image: url(../imagens/topcover_gb_darkist.jpg);
-    background-position: center;
     background-size: cover;
-    background-color: rgb(34, 36, 172);
-    height: 100px;
+    background-position: center;
 }
-.menupc ul{
-    width: 100%;
-    list-style: none;
-    display: inline-block;
-    text-align: center;
+.inner-width{
+    max-width: 1000px;
+    padding: 0 10px;
+    margin: auto;
+
 }
-.menupc ul li{ 
-display: inline-block;
-text-align: center;
-margin: 30px 10% 0 0;
+.logo{
+    float: left;
+    padding: 20px 0;
 }
-.menupc ul li a{
+.logo-img{
+    height: 50px;
+}
+.navigation-menu{
+    float: right;
+    display: flex;
+    align-items: center;
+    min-height: 90px;
+}
+.navigation-menu a{
+    margin-left: 10px;
+    text-shadow: 1px 1px wheat;
+    text-transform: uppercase;
+    background: rgba(128, 128, 128, 0.548);
     padding: 10px;
-    border-radius: 20px;
-    background-color: rgba(134, 177, 152, 0.404);
-    font-size: 30px;
-    text-decoration: none;
-    color: rgb(255, 255, 255);
+    color: #ddd;
+    border-radius: 4px;
+    transition: .3s linear;
+}
+.navigation-menu a:hover{
+    background-color: whitesmoke;
+    color: darkblue;
+    transform: scale(1.1);
+}
+.navigation-menu i{
+    margin-right: 8px;
+    font-size: 16px;
+}
+.home{
+    color:rgb(0, 0, 0) !important
+}
+.sobre{
+    color:rgb(0, 0, 0) !important
+}
+.lista{
+    color:rgb(0, 0, 0) !important
+}
+.novidades{
+    color:rgb(0, 0, 0) !important
+    
+}
+.menu-toggle-btn{
+    float: right;
+    height: 90px;
+    line-height: 90px !important;
+    color: #fff;
+    font-size:26px;
+    display: none !important;
+    cursor: pointer;
 }
 section{
     color: rgb(255, 255, 255);
@@ -60,56 +99,35 @@ section p {
 .sessao2 img{
     width: 100%;
 }
-@media screen and (max-width:570px) {
-    .menupc{
+@media screen and (max-width:700px) {
+    .menu-toggle-btn{
+        display: block !important;
+    }
+    .navigation-menu{
+        position: fixed;
+        width: 100%;
+        max-width: 400px;
+        background-color: rgb(39, 3, 39);
+        top: 90px;
+        right: 0;
         display: none;
+        padding: 20px 40px;
+        box-sizing: border-box;
     }
-    .menumobile{
-        position: relative;
-        display: inline-block;
-        width: 60px;
-        height: 60px;
-        background-image: url(../imagens/6499731.png);
-        background-position: center;
-        background-size: cover;
-        background-color: rgba(255, 255, 255, 0);
-        height: 100px;
-        overflow: hidden;
-        cursor: pointer;
+    .navigation-menu a{
+        display: block;
+        margin: 10px 0;
     }
-    .menumobile ul{
-        display: none;
-        padding: 5px;
-        background-color: rgb(125, 134, 45);
-        width: 40%;
-        list-style: none;
-       /* position: absolute;
-        top: 100px;*/
+    .navigation-menu::before{
+        content: "";
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid rgb(39, 3, 39);
+        position: absolute;
+        top: -10px;
+        right: 10px;
     }
-    .menumobileon{
-        position: static;
-        display: inline-block;
-        width: 40%;
-        height: auto;
-        overflow: auto;
-        background-image: url(../imagens/topcover_gb_darkist.jpg);
-        background-position: center;
-        background-size: cover ;
-
-    }
-    .menumobileon ul li{ 
-        background-color: rgb(53, 44, 34);
-      display: inline-block;
-       text-align: center;
-      margin: 30px 5px 0 0;
-      padding: 5px;
-      font-size: 20px;
-      color: rgb(255, 255, 255);
-    }
-    .menumobileon ul li a{
-        padding: 5px;
-        font-size: 20px;
-        text-decoration: none;
-        color: rgb(255, 255, 255);
+    .navigation-menu.active{
+        display: block !important;
     }
 }

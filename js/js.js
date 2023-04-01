@@ -14,7 +14,7 @@
   $('.menumobile').css('background-image','url(../imagens/bg.webp)')
 })
   }*/
-  $('.menumobile').click(function () {
-    $('.menumobile').removeClass('menumobile')
-    $('#menumobile').addClass('menumobileon');
+  $('.menu-toggle-btn').click(function () {
+    $(this).toggleClass('fa-times')
+    $('.navigation-menu').toggleClass('active')
   })
